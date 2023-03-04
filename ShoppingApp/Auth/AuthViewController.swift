@@ -6,16 +6,18 @@ import UIKit
 
 class AuthViewController: UIViewController {
     
+    @IBOutlet weak var signInButton: LoadingButton!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var usernameTextFieldView: UIView!
     @IBOutlet weak var passwordTextFieldView: UIView!
+    
     let usernameTextfield = CustomTextFieldView()
     let passwordTextfield = CustomTextFieldView()
-    var tabBarModels: [TabBarModel]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        containerView.configureShadowWithCorner(shadowColor: .getColorFromHex("EC6296"))
+        signInButton.animationStyle = .springIn
+        containerView.configureShadowWithCorner(shadowColor: .getColorFromHex("EC6296"), shadowOpacity: 0.8)
         layoutTextField(usernameTextFieldView, textFieldView: usernameTextfield, title: StringConstants.username, inputText: "JWick", tintColorActive: .getColorFromHex("EC6296"))
         layoutTextField(passwordTextFieldView, textFieldView: passwordTextfield, title: StringConstants.password, tintColorActive: .getColorFromHex("EC6296"), isSecureTextEntry: true)
     }
@@ -29,8 +31,26 @@ class AuthViewController: UIViewController {
         textFieldView.configureTextField(title, inputText: inputText, tintColorActive: tintColorActive, primaryBorderColour: primaryBorderColour, primaryBackgroundColor: primaryBackgroundColor, isSecureTextEntry: isSecureTextEntry)
     }
     
-    @IBAction func signInPressed(_ sender: UIButton) {
-        createAndNavigateToTabBarVC()
+    @IBAction func signInPressed(_ sender: LoadingButton) {
+        sender.startLoadingAnimation()
+        if usernameTextfield.textField.text == "" || passwordTextfield.textField.text == "" {
+            MessageView.show("Username or Password cannot be empty")
+            sender.stopLoadingAnimation()
+            return
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            sender.stopLoadingAnimation()
+            if self.usernameTextfield.textField.text != "wjohn" {
+                MessageView.show("Invalid Username")
+                return
+            }
+            
+            if self.passwordTextfield.textField.text != "1234" {
+                MessageView.show("The user name or password is incorrect")
+                return
+            }
+            self.createAndNavigateToTabBarVC()
+        }
     }
     
     private func createAndNavigateToTabBarVC() {

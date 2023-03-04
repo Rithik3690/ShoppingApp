@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="containerView" destination="jge-vw-YyG" id="9Rf-GK-iUG"/>
                 <outlet property="passwordTextFieldView" destination="AIL-tG-sqW" id="pcD-hB-Uqm"/>
+                <outlet property="signInButton" destination="Bfs-KE-637" id="ZY4-V3-M9p"/>
                 <outlet property="usernameTextFieldView" destination="wFB-hy-N8k" id="oan-Nx-htY"/>
                 <outlet property="view" destination="iN0-l3-epB" id="qYe-vf-i42"/>
             </connections>
@@ -47,18 +48,23 @@
                                 <constraint firstAttribute="height" constant="60" id="M9O-Zb-crV"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bfs-KE-637">
-                            <rect key="frame" x="85" y="312" width="150" height="35"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bfs-KE-637" customClass="LoadingButton" customModule="ShoppingApp" customModuleProvider="target">
+                            <rect key="frame" x="60" y="312" width="200" height="35"/>
                             <color key="backgroundColor" red="0.92549019607843142" green="0.38431372549019605" blue="0.58823529411764708" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="KEe-NJ-OlQ"/>
-                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="TFn-u3-GmV"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="TFn-u3-GmV"/>
                             </constraints>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="SIGN IN">
                                 <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
                             </buttonConfiguration>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="4"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="signInPressed:" destination="-1" eventType="touchUpInside" id="YqA-jX-vAu"/>
                             </connections>
@@ -93,6 +99,11 @@
             <point key="canvasLocation" x="4" y="19.95073891625616"/>
         </view>
     </objects>
+    <designables>
+        <designable name="Bfs-KE-637">
+            <size key="intrinsicContentSize" width="83.666666666666671" height="34.333333333333336"/>
+        </designable>
+    </designables>
     <resources>
         <image name="logo" width="616" height="703"/>
         <systemColor name="systemBackgroundColor">

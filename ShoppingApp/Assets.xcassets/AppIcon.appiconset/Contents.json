@@ -1,286 +1,115 @@
 {
   "images" : [
     {
-      "filename" : "6cbe72f7db516b4c734aecb77a8dbd29 (14).png",
+      "filename" : "40.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "2x",
       "size" : "20x20"
     },
     {
-      "filename" : "6cbe72f7db516b4c734aecb77a8dbd29 (13).png",
+      "filename" : "60.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "3x",
       "size" : "20x20"
     },
     {
-      "filename" : "6cbe72f7db516b4c734aecb77a8dbd29 (12).png",
+      "filename" : "58.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
-      "filename" : "6cbe72f7db516b4c734aecb77a8dbd29 (11).png",
+      "filename" : "87.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "3x",
       "size" : "29x29"
     },
     {
-      "filename" : "6cbe72f7db516b4c734aecb77a8dbd29 (10).png",
+      "filename" : "76.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "2x",
       "size" : "38x38"
     },
     {
-      "filename" : "6cbe72f7db516b4c734aecb77a8dbd29 (9).png",
+      "filename" : "114.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "3x",
       "size" : "38x38"
     },
     {
-      "filename" : "6cbe72f7db516b4c734aecb77a8dbd29 (8).png",
+      "filename" : "80.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "2x",
       "size" : "40x40"
     },
     {
-      "filename" : "6cbe72f7db516b4c734aecb77a8dbd29 (7) 1.png",
+      "filename" : "120.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "3x",
       "size" : "40x40"
     },
     {
-      "filename" : "6cbe72f7db516b4c734aecb77a8dbd29 (7).png",
+      "filename" : "120 1.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "2x",
       "size" : "60x60"
     },
     {
-      "filename" : "6cbe72f7db516b4c734aecb77a8dbd29 (6).png",
+      "filename" : "180.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "3x",
       "size" : "60x60"
     },
     {
-      "filename" : "6cbe72f7db516b4c734aecb77a8dbd29 (15).png",
+      "filename" : "Blue Modern Meet Our Team Instagram Post (1).png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "2x",
       "size" : "64x64"
     },
     {
-      "filename" : "6cbe72f7db516b4c734aecb77a8dbd29 (4).png",
+      "filename" : "Blue Modern Meet Our Team Instagram Post (2).png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "3x",
       "size" : "64x64"
     },
     {
-      "filename" : "6cbe72f7db516b4c734aecb77a8dbd29 (3).png",
+      "filename" : "Blue Modern Meet Our Team Instagram Post (3).png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "2x",
       "size" : "68x68"
     },
     {
-      "filename" : "6cbe72f7db516b4c734aecb77a8dbd29 (2).png",
+      "filename" : "152.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "2x",
       "size" : "76x76"
     },
     {
-      "filename" : "6cbe72f7db516b4c734aecb77a8dbd29 (1).png",
+      "filename" : "167.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "2x",
       "size" : "83.5x83.5"
     },
     {
-      "filename" : "6cbe72f7db516b4c734aecb77a8dbd29.png",
+      "filename" : "1024.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
-    },
-    {
-      "idiom" : "mac",
-      "scale" : "1x",
-      "size" : "16x16"
-    },
-    {
-      "idiom" : "mac",
-      "language-direction" : "left-to-right",
-      "scale" : "1x",
-      "size" : "16x16"
-    },
-    {
-      "idiom" : "mac",
-      "language-direction" : "right-to-left",
-      "scale" : "1x",
-      "size" : "16x16"
-    },
-    {
-      "idiom" : "mac",
-      "scale" : "2x",
-      "size" : "16x16"
-    },
-    {
-      "idiom" : "mac",
-      "language-direction" : "left-to-right",
-      "scale" : "2x",
-      "size" : "16x16"
-    },
-    {
-      "idiom" : "mac",
-      "language-direction" : "right-to-left",
-      "scale" : "2x",
-      "size" : "16x16"
-    },
-    {
-      "idiom" : "mac",
-      "scale" : "1x",
-      "size" : "32x32"
-    },
-    {
-      "idiom" : "mac",
-      "language-direction" : "left-to-right",
-      "scale" : "1x",
-      "size" : "32x32"
-    },
-    {
-      "idiom" : "mac",
-      "language-direction" : "right-to-left",
-      "scale" : "1x",
-      "size" : "32x32"
-    },
-    {
-      "idiom" : "mac",
-      "scale" : "2x",
-      "size" : "32x32"
-    },
-    {
-      "idiom" : "mac",
-      "language-direction" : "left-to-right",
-      "scale" : "2x",
-      "size" : "32x32"
-    },
-    {
-      "idiom" : "mac",
-      "language-direction" : "right-to-left",
-      "scale" : "2x",
-      "size" : "32x32"
-    },
-    {
-      "filename" : "6cbe72f7db516b4c734aecb77a8dbd29 (5).png",
-      "idiom" : "mac",
-      "scale" : "1x",
-      "size" : "128x128"
-    },
-    {
-      "idiom" : "mac",
-      "language-direction" : "left-to-right",
-      "scale" : "1x",
-      "size" : "128x128"
-    },
-    {
-      "idiom" : "mac",
-      "language-direction" : "right-to-left",
-      "scale" : "1x",
-      "size" : "128x128"
-    },
-    {
-      "idiom" : "mac",
-      "scale" : "2x",
-      "size" : "128x128"
-    },
-    {
-      "idiom" : "mac",
-      "language-direction" : "left-to-right",
-      "scale" : "2x",
-      "size" : "128x128"
-    },
-    {
-      "idiom" : "mac",
-      "language-direction" : "right-to-left",
-      "scale" : "2x",
-      "size" : "128x128"
-    },
-    {
-      "idiom" : "mac",
-      "scale" : "1x",
-      "size" : "256x256"
-    },
-    {
-      "idiom" : "mac",
-      "language-direction" : "left-to-right",
-      "scale" : "1x",
-      "size" : "256x256"
-    },
-    {
-      "idiom" : "mac",
-      "language-direction" : "right-to-left",
-      "scale" : "1x",
-      "size" : "256x256"
-    },
-    {
-      "idiom" : "mac",
-      "scale" : "2x",
-      "size" : "256x256"
-    },
-    {
-      "idiom" : "mac",
-      "language-direction" : "left-to-right",
-      "scale" : "2x",
-      "size" : "256x256"
-    },
-    {
-      "idiom" : "mac",
-      "language-direction" : "right-to-left",
-      "scale" : "2x",
-      "size" : "256x256"
-    },
-    {
-      "idiom" : "mac",
-      "scale" : "1x",
-      "size" : "512x512"
-    },
-    {
-      "idiom" : "mac",
-      "language-direction" : "left-to-right",
-      "scale" : "1x",
-      "size" : "512x512"
-    },
-    {
-      "idiom" : "mac",
-      "language-direction" : "right-to-left",
-      "scale" : "1x",
-      "size" : "512x512"
-    },
-    {
-      "idiom" : "mac",
-      "scale" : "2x",
-      "size" : "512x512"
-    },
-    {
-      "idiom" : "mac",
-      "language-direction" : "left-to-right",
-      "scale" : "2x",
-      "size" : "512x512"
-    },
-    {
-      "idiom" : "mac",
-      "language-direction" : "right-to-left",
-      "scale" : "2x",
-      "size" : "512x512"
     }
   ],
   "info" : {

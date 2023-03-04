@@ -22,11 +22,17 @@
 		B34132D329B27B40006FB8BD /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B34132D229B27B40006FB8BD /* HomeViewController.xib */; };
 		B34132D629B27B53006FB8BD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34132D529B27B53006FB8BD /* ProfileViewController.swift */; };
 		B34132D829B27B5F006FB8BD /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B34132D729B27B5F006FB8BD /* ProfileViewController.xib */; };
-		B34132DA29B27CC2006FB8BD /* TabBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34132D929B27CC2006FB8BD /* TabBarModel.swift */; };
 		B34132DE29B27EE9006FB8BD /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34132DD29B27EE9006FB8BD /* StringConstants.swift */; };
 		B34132E129B283C4006FB8BD /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B34132E029B283C4006FB8BD /* Colors.xcassets */; };
 		B34132E429B28BD6006FB8BD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34132E329B28BD6006FB8BD /* Extensions.swift */; };
 		B34132EA29B3088A006FB8BD /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34132E929B30889006FB8BD /* CustomTextFieldView.swift */; };
+		B34132EF29B35CA1006FB8BD /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34132EE29B35CA1006FB8BD /* CustomButton.swift */; };
+		B34132F429B35ED9006FB8BD /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34132F329B35ED9006FB8BD /* MessageView.swift */; };
+		B34132F629B36037006FB8BD /* AnimatedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34132F529B36037006FB8BD /* AnimatedButton.swift */; };
+		B34132F829B3603E006FB8BD /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34132F729B3603E006FB8BD /* LoadingButton.swift */; };
+		B341330529B361C6006FB8BD /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B341330429B361C6006FB8BD /* Animations.swift */; };
+		B341330729B367EF006FB8BD /* MessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B341330629B367EF006FB8BD /* MessageView.xib */; };
+		B341330929B36ABC006FB8BD /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B341330829B36ABC006FB8BD /* App.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,11 +74,17 @@
 		B34132D229B27B40006FB8BD /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		B34132D529B27B53006FB8BD /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B34132D729B27B5F006FB8BD /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
-		B34132D929B27CC2006FB8BD /* TabBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModel.swift; sourceTree = "<group>"; };
 		B34132DD29B27EE9006FB8BD /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
 		B34132E029B283C4006FB8BD /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		B34132E329B28BD6006FB8BD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B34132E929B30889006FB8BD /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
+		B34132EE29B35CA1006FB8BD /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		B34132F329B35ED9006FB8BD /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		B34132F529B36037006FB8BD /* AnimatedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedButton.swift; sourceTree = "<group>"; };
+		B34132F729B3603E006FB8BD /* LoadingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
+		B341330429B361C6006FB8BD /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
+		B341330629B367EF006FB8BD /* MessageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageView.xib; sourceTree = "<group>"; };
+		B341330829B36ABC006FB8BD /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,7 +182,6 @@
 		B34132C729B2710F006FB8BD /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				B34132D929B27CC2006FB8BD /* TabBarModel.swift */,
 				B34132C829B2748D006FB8BD /* AuthViewController.swift */,
 				B34132CA29B27495006FB8BD /* AuthViewController.xib */,
 			);
@@ -208,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				B34132DD29B27EE9006FB8BD /* StringConstants.swift */,
+				B341330829B36ABC006FB8BD /* App.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -223,9 +235,47 @@
 		B34132E829B3086A006FB8BD /* CustomComponents */ = {
 			isa = PBXGroup;
 			children = (
-				B34132E929B30889006FB8BD /* CustomTextFieldView.swift */,
+				B341330329B361BA006FB8BD /* Animations */,
+				B341330229B36090006FB8BD /* MessageComponent */,
+				B341330129B36083006FB8BD /* TextFieldComponent */,
+				B341330029B36075006FB8BD /* ButtonComponents */,
 			);
 			path = CustomComponents;
+			sourceTree = "<group>";
+		};
+		B341330029B36075006FB8BD /* ButtonComponents */ = {
+			isa = PBXGroup;
+			children = (
+				B34132EE29B35CA1006FB8BD /* CustomButton.swift */,
+				B34132F529B36037006FB8BD /* AnimatedButton.swift */,
+				B34132F729B3603E006FB8BD /* LoadingButton.swift */,
+			);
+			path = ButtonComponents;
+			sourceTree = "<group>";
+		};
+		B341330129B36083006FB8BD /* TextFieldComponent */ = {
+			isa = PBXGroup;
+			children = (
+				B34132E929B30889006FB8BD /* CustomTextFieldView.swift */,
+			);
+			path = TextFieldComponent;
+			sourceTree = "<group>";
+		};
+		B341330229B36090006FB8BD /* MessageComponent */ = {
+			isa = PBXGroup;
+			children = (
+				B34132F329B35ED9006FB8BD /* MessageView.swift */,
+				B341330629B367EF006FB8BD /* MessageView.xib */,
+			);
+			path = MessageComponent;
+			sourceTree = "<group>";
+		};
+		B341330329B361BA006FB8BD /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				B341330429B361C6006FB8BD /* Animations.swift */,
+			);
+			path = Animations;
 			sourceTree = "<group>";
 		};
 		ED890A7842F9B8BB8D3D34D1 /* Pods */ = {
@@ -351,6 +401,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B341330729B367EF006FB8BD /* MessageView.xib in Resources */,
 				B301F72629B251D00036BA5F /* LaunchScreen.storyboard in Resources */,
 				B34132CB29B27495006FB8BD /* AuthViewController.xib in Resources */,
 				B301F72329B251D00036BA5F /* Assets.xcassets in Resources */,
@@ -423,15 +474,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B34132F829B3603E006FB8BD /* LoadingButton.swift in Sources */,
 				B34132D629B27B53006FB8BD /* ProfileViewController.swift in Sources */,
 				B34132E429B28BD6006FB8BD /* Extensions.swift in Sources */,
 				B34132D129B27B38006FB8BD /* HomeViewController.swift in Sources */,
 				B34132EA29B3088A006FB8BD /* CustomTextFieldView.swift in Sources */,
+				B341330929B36ABC006FB8BD /* App.swift in Sources */,
 				B34132C929B2748D006FB8BD /* AuthViewController.swift in Sources */,
 				B301F71E29B251CE0036BA5F /* LaunchAnimationViewController.swift in Sources */,
 				B34132DE29B27EE9006FB8BD /* StringConstants.swift in Sources */,
+				B34132EF29B35CA1006FB8BD /* CustomButton.swift in Sources */,
 				B301F71A29B251CE0036BA5F /* AppDelegate.swift in Sources */,
-				B34132DA29B27CC2006FB8BD /* TabBarModel.swift in Sources */,
+				B341330529B361C6006FB8BD /* Animations.swift in Sources */,
+				B34132F429B35ED9006FB8BD /* MessageView.swift in Sources */,
+				B34132F629B36037006FB8BD /* AnimatedButton.swift in Sources */,
 				B301F71C29B251CE0036BA5F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
