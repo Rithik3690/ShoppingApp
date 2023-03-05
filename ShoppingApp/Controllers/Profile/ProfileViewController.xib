@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="ShoppingApp" customModuleProvider="target">
             <connections>
+                <outlet property="logOutButton" destination="nci-Pv-ecn" id="agI-6u-boR"/>
+                <outlet property="tableView" destination="Ljf-vP-GON" id="xJq-lS-iiw"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Ikl-Js-zTD"/>
             </connections>
         </placeholder>
@@ -18,9 +20,40 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ljf-vP-GON">
+                    <rect key="frame" x="0.0" y="47" width="375" height="609"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nci-Pv-ecn" customClass="AnimatedButton" customModule="ShoppingApp" customModuleProvider="target">
+                    <rect key="frame" x="77.666666666666686" y="668" width="220" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Qy6-YF-cOJ"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="220" id="nEI-as-dLh"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="logOutTapped:" destination="-1" eventType="touchUpInside" id="OOj-SZ-F9t"/>
+                    </connections>
+                </button>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="66" y="21"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="nci-Pv-ecn" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="7sH-cV-QKM"/>
+                <constraint firstItem="Ljf-vP-GON" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="i7y-Wr-EsC"/>
+                <constraint firstItem="nci-Pv-ecn" firstAttribute="top" secondItem="Ljf-vP-GON" secondAttribute="bottom" constant="12" id="jvz-LF-DSt"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="nci-Pv-ecn" secondAttribute="bottom" constant="70" id="k5f-K2-AwQ"/>
+                <constraint firstItem="Ljf-vP-GON" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="qn4-Ho-gZh"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Ljf-vP-GON" secondAttribute="trailing" id="z7k-MC-biC"/>
+            </constraints>
+            <point key="canvasLocation" x="64.799999999999997" y="20.689655172413794"/>
         </view>
     </objects>
     <resources>

@@ -11,8 +11,8 @@ class CustomTextFieldView: UIView {
     let textField = UITextField()
     
     let height: CGFloat = 60
-    var tintColorActive: UIColor = .systemBlue
-    var primaryBorderColour: UIColor = .systemGray
+    var tintColorActive: UIColor = Theme.accentColor
+    var primaryBorderColour: UIColor = Theme.primaryTextColor.withAlphaComponent(0.8)
     var title: String = "" {
         didSet{
             label.text = title
@@ -23,7 +23,7 @@ class CustomTextFieldView: UIView {
             textField.isSecureTextEntry = isSecureTextEntry
         }
     }
-    var primaryBackgroundColor: UIColor = .systemBackground
+    var primaryBackgroundColor: UIColor = Theme.backgroundColor
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -40,7 +40,7 @@ class CustomTextFieldView: UIView {
         return CGSize(width: UIView.noIntrinsicMetric, height: height)
     }
     
-    func configureTextField(_ title: String, inputText: String = "", tintColorActive: UIColor = .systemBlue, primaryBorderColour: UIColor = .systemGray, primaryBackgroundColor: UIColor = .systemBackground, isSecureTextEntry: Bool = false) {
+    func configureTextField(_ title: String, inputText: String = "", tintColorActive: UIColor = Theme.accentColor, primaryBorderColour: UIColor = Theme.primaryTextColor.withAlphaComponent(0.8), primaryBackgroundColor: UIColor = Theme.backgroundColor, isSecureTextEntry: Bool = false) {
         self.title = title
         self.textField.text = inputText
         self.tintColorActive = tintColorActive
@@ -56,11 +56,12 @@ class CustomTextFieldView: UIView {
 
 extension CustomTextFieldView {
     
-    func setup() {
+    private func setup() {
         textField.delegate = self
     }
     
-    func style() {
+    private func style() {
+        backgroundColor = primaryBackgroundColor
         translatesAutoresizingMaskIntoConstraints = false
         layer.borderColor = primaryBorderColour.cgColor
         layer.borderWidth = 1
@@ -85,7 +86,7 @@ extension CustomTextFieldView {
         
     }
     
-    func layout() {
+    private func layout() {
         addSubview(label)
         addSubview(textField)
         
@@ -102,7 +103,7 @@ extension CustomTextFieldView {
     }
     
     
-    @objc func tapped(_ recognizer: UITapGestureRecognizer) {
+    @objc private func tapped(_ recognizer: UITapGestureRecognizer) {
         if(recognizer.state == UIGestureRecognizer.State.ended) {
             addTextFieldAnimation(true)
         }
@@ -113,7 +114,7 @@ extension CustomTextFieldView {
 
 extension CustomTextFieldView {
     
-    func addTextFieldAnimation(_ shouldBecomeFirstResponder: Bool) {
+    private func addTextFieldAnimation(_ shouldBecomeFirstResponder: Bool) {
 
         UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.1, delay: 0, options: []) { [weak self] in
             guard let self = self else { return }
@@ -158,11 +159,11 @@ extension CustomTextFieldView: UITextFieldDelegate {
 // MARK: - Actions
 
 extension CustomTextFieldView {
-    func undo() {
+    private func undo() {
         let size = UIViewPropertyAnimator(duration: 0.1, curve: .linear) { [weak self] in
             guard let self = self else { return }
             // style
-            self.label.textColor = .systemGray
+            self.label.textColor = self.primaryBorderColour
             self.layer.borderColor = self.primaryBorderColour.cgColor
             self.layer.borderWidth = 1
             

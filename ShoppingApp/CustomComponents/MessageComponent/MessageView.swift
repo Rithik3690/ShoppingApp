@@ -37,13 +37,13 @@ open class MessageView: UIView {
         }
     }
 
-    @objc func tapped(_ recognizer: UITapGestureRecognizer) {
+    @objc private func tapped(_ recognizer: UITapGestureRecognizer) {
         if(recognizer.state == UIGestureRecognizer.State.ended) {
             hide()
         }
     }
     
-    func hide() {
+    private func hide() {
         DispatchQueue.main.async {
             if let keyWindow = UIApplication.shared.connectedScenes.filter({$0.activationState == .foregroundActive}).compactMap({$0 as? UIWindowScene}).first?.windows.filter({$0.isKeyWindow}).first {
                 keyWindow.subviews.forEach({ (view) in
@@ -57,7 +57,7 @@ open class MessageView: UIView {
         }
     }
     
-    func configureTapGestureRecognizer() {
+    private func configureTapGestureRecognizer() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapped(_: )))
         addGestureRecognizer(tap)
     }

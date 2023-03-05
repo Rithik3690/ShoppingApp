@@ -15,7 +15,7 @@ class LaunchAnimationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(logoImageView)
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = Theme.backgroundColor
     }
 
     override func viewDidLayoutSubviews() {
