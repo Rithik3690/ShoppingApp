@@ -4,25 +4,6 @@
 
 import UIKit
 
-extension UIColor {
-    class public func getColorFromHex(_ hexString : String) -> UIColor {
-        
-        var cString:String = hexString.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
-        
-        if (cString.hasPrefix("#")) {
-            cString.remove(at: cString.startIndex)
-        }
-        if (cString.count != 6) {
-            return UIColor.gray
-        }
-        
-        var rgbValue:UInt64 = 0
-        Scanner(string: cString).scanHexInt64(&rgbValue)
-        
-        return UIColor(red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0, green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0, blue: CGFloat(rgbValue & 0x0000FF) / 255.0, alpha: CGFloat(1.0))
-    }
-}
-
 extension UIView {
     func configureShadowWithBorderAndCorner(withBorder borderWidth: CGFloat = 0.5, borderColor: UIColor = .systemGray, cornerRadius: CGFloat = 6.0, shadowColor: UIColor = .systemGray, shadowOpacity: Float = 0.54, shadowRadius: CGFloat = 3.0, shadowOffset: CGSize = CGSize(width: 0.5, height: 0.5)) {
         layer.masksToBounds = false
@@ -52,5 +33,45 @@ public extension UIDevice {
         } else {
             return false
         }
+    }
+}
+
+
+extension String {
+    func equalsIgnoreCase(_ string: String) -> Bool {
+        return self.lowercased() == string.lowercased()
+    }
+}
+
+extension UIImageView {
+        
+    func loadImageFromAPI(with url: String?) {
+        let semaphore = DispatchSemaphore (value: 0)
+        guard let url = url, let apiUrl = URL(string: url) else { return }
+        let imageCache = NSCache<NSString, UIImage>()
+        if let imageFromCache = imageCache.object(forKey: url as NSString) {
+            image = imageFromCache
+            return
+        }
+        
+        var request = URLRequest(url: apiUrl,timeoutInterval: Double.infinity)
+        request.httpMethod = StringConstants.get
+        
+        let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
+          guard let data = data else {
+            print(String(describing: error))
+            semaphore.signal()
+            return
+          }
+            if let image = UIImage(data: data) {
+                DispatchQueue.main.async {
+                    imageCache.setObject(image, forKey: url as NSString)
+                    self?.image = image
+                }
+            }
+          semaphore.signal()
+        }
+        task.resume()
+        semaphore.wait()
     }
 }

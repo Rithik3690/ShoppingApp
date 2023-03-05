@@ -15,5 +15,5 @@ struct StringConstants {
     static let person_fill = "person.fill"
     static let username = "Username"
     static let password = "Password"
-    
+    static let get = "GET"
 }

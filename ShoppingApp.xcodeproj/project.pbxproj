@@ -16,10 +16,12 @@
 		B301F73129B251D10036BA5F /* ShoppingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B301F73029B251D10036BA5F /* ShoppingAppTests.swift */; };
 		B301F73B29B251D10036BA5F /* ShoppingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B301F73A29B251D10036BA5F /* ShoppingAppUITests.swift */; };
 		B301F73D29B251D10036BA5F /* ShoppingAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B301F73C29B251D10036BA5F /* ShoppingAppUITestsLaunchTests.swift */; };
+		B30A124729B46D63009DC930 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30A124629B46D63009DC930 /* Theme.swift */; };
+		B30A124929B47145009DC930 /* HttpUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30A124829B47145009DC930 /* HttpUtil.swift */; };
+		B30A124B29B4764C009DC930 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30A124A29B4764C009DC930 /* UserModel.swift */; };
+		B30A124F29B48D3F009DC930 /* CoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30A124E29B48D3F009DC930 /* CoreModel.swift */; };
 		B34132C929B2748D006FB8BD /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34132C829B2748D006FB8BD /* AuthViewController.swift */; };
 		B34132CB29B27495006FB8BD /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B34132CA29B27495006FB8BD /* AuthViewController.xib */; };
-		B34132D129B27B38006FB8BD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34132D029B27B38006FB8BD /* HomeViewController.swift */; };
-		B34132D329B27B40006FB8BD /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B34132D229B27B40006FB8BD /* HomeViewController.xib */; };
 		B34132D629B27B53006FB8BD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34132D529B27B53006FB8BD /* ProfileViewController.swift */; };
 		B34132D829B27B5F006FB8BD /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B34132D729B27B5F006FB8BD /* ProfileViewController.xib */; };
 		B34132DE29B27EE9006FB8BD /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34132DD29B27EE9006FB8BD /* StringConstants.swift */; };
@@ -33,6 +35,19 @@
 		B341330529B361C6006FB8BD /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B341330429B361C6006FB8BD /* Animations.swift */; };
 		B341330729B367EF006FB8BD /* MessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B341330629B367EF006FB8BD /* MessageView.xib */; };
 		B341330929B36ABC006FB8BD /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B341330829B36ABC006FB8BD /* App.swift */; };
+		B3BF53CC29B4A46600CFC24A /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BF53CB29B4A46600CFC24A /* HomePageViewController.swift */; };
+		B3BF53CE29B4A47100CFC24A /* HomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3BF53CD29B4A47100CFC24A /* HomePageViewController.xib */; };
+		B3BF53D129B4A62E00CFC24A /* HomeStyleOneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BF53CF29B4A62E00CFC24A /* HomeStyleOneCell.swift */; };
+		B3BF53D229B4A62E00CFC24A /* HomeStyleOneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3BF53D029B4A62E00CFC24A /* HomeStyleOneCell.xib */; };
+		B3BF53D529B4A63C00CFC24A /* HomeStyleTwoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BF53D329B4A63C00CFC24A /* HomeStyleTwoCell.swift */; };
+		B3BF53D629B4A63C00CFC24A /* HomeStyleTwoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3BF53D429B4A63C00CFC24A /* HomeStyleTwoCell.xib */; };
+		B3BF53D929B4A65200CFC24A /* HomeRewardsProgramCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BF53D729B4A65200CFC24A /* HomeRewardsProgramCell.swift */; };
+		B3BF53DA29B4A65200CFC24A /* HomeRewardsProgramCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3BF53D829B4A65200CFC24A /* HomeRewardsProgramCell.xib */; };
+		B3BF53DC29B4AAD200CFC24A /* HomePageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BF53DB29B4AAD200CFC24A /* HomePageModel.swift */; };
+		B3F2CEC029B4DE3B00DB26AC /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F2CEBF29B4DE3B00DB26AC /* ProfileHeaderView.swift */; };
+		B3F2CEC229B4DE5B00DB26AC /* ProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F2CEC129B4DE5B00DB26AC /* ProfileHeaderView.xib */; };
+		B3F2CEC529B4DFB100DB26AC /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F2CEC329B4DFB100DB26AC /* ProfileCell.swift */; };
+		B3F2CEC629B4DFB100DB26AC /* ProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F2CEC429B4DFB100DB26AC /* ProfileCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,10 +83,12 @@
 		B301F73629B251D10036BA5F /* ShoppingAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShoppingAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B301F73A29B251D10036BA5F /* ShoppingAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingAppUITests.swift; sourceTree = "<group>"; };
 		B301F73C29B251D10036BA5F /* ShoppingAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B30A124629B46D63009DC930 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		B30A124829B47145009DC930 /* HttpUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpUtil.swift; sourceTree = "<group>"; };
+		B30A124A29B4764C009DC930 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		B30A124E29B48D3F009DC930 /* CoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreModel.swift; sourceTree = "<group>"; };
 		B34132C829B2748D006FB8BD /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		B34132CA29B27495006FB8BD /* AuthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
-		B34132D029B27B38006FB8BD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		B34132D229B27B40006FB8BD /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		B34132D529B27B53006FB8BD /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B34132D729B27B5F006FB8BD /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		B34132DD29B27EE9006FB8BD /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
@@ -85,6 +102,19 @@
 		B341330429B361C6006FB8BD /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		B341330629B367EF006FB8BD /* MessageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageView.xib; sourceTree = "<group>"; };
 		B341330829B36ABC006FB8BD /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		B3BF53CB29B4A46600CFC24A /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		B3BF53CD29B4A47100CFC24A /* HomePageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePageViewController.xib; sourceTree = "<group>"; };
+		B3BF53CF29B4A62E00CFC24A /* HomeStyleOneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStyleOneCell.swift; sourceTree = "<group>"; };
+		B3BF53D029B4A62E00CFC24A /* HomeStyleOneCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeStyleOneCell.xib; sourceTree = "<group>"; };
+		B3BF53D329B4A63C00CFC24A /* HomeStyleTwoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStyleTwoCell.swift; sourceTree = "<group>"; };
+		B3BF53D429B4A63C00CFC24A /* HomeStyleTwoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeStyleTwoCell.xib; sourceTree = "<group>"; };
+		B3BF53D729B4A65200CFC24A /* HomeRewardsProgramCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRewardsProgramCell.swift; sourceTree = "<group>"; };
+		B3BF53D829B4A65200CFC24A /* HomeRewardsProgramCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeRewardsProgramCell.xib; sourceTree = "<group>"; };
+		B3BF53DB29B4AAD200CFC24A /* HomePageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageModel.swift; sourceTree = "<group>"; };
+		B3F2CEBF29B4DE3B00DB26AC /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		B3F2CEC129B4DE5B00DB26AC /* ProfileHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHeaderView.xib; sourceTree = "<group>"; };
+		B3F2CEC329B4DFB100DB26AC /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		B3F2CEC429B4DFB100DB26AC /* ProfileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +212,7 @@
 		B34132C729B2710F006FB8BD /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				B30A124A29B4764C009DC930 /* UserModel.swift */,
 				B34132C829B2748D006FB8BD /* AuthViewController.swift */,
 				B34132CA29B27495006FB8BD /* AuthViewController.xib */,
 			);
@@ -200,8 +231,10 @@
 		B34132CE29B27B00006FB8BD /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				B34132D029B27B38006FB8BD /* HomeViewController.swift */,
-				B34132D229B27B40006FB8BD /* HomeViewController.xib */,
+				B3BF53DB29B4AAD200CFC24A /* HomePageModel.swift */,
+				B3BF53CB29B4A46600CFC24A /* HomePageViewController.swift */,
+				B3BF53CD29B4A47100CFC24A /* HomePageViewController.xib */,
+				B3BF53BF29B49FA200CFC24A /* Views */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -211,6 +244,7 @@
 			children = (
 				B34132D529B27B53006FB8BD /* ProfileViewController.swift */,
 				B34132D729B27B5F006FB8BD /* ProfileViewController.xib */,
+				B3F2CEBE29B4DD5500DB26AC /* Views */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -218,8 +252,11 @@
 		B34132DB29B27E15006FB8BD /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				B30A124829B47145009DC930 /* HttpUtil.swift */,
+				B30A124629B46D63009DC930 /* Theme.swift */,
 				B34132DD29B27EE9006FB8BD /* StringConstants.swift */,
 				B341330829B36ABC006FB8BD /* App.swift */,
+				B30A124E29B48D3F009DC930 /* CoreModel.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -276,6 +313,30 @@
 				B341330429B361C6006FB8BD /* Animations.swift */,
 			);
 			path = Animations;
+			sourceTree = "<group>";
+		};
+		B3BF53BF29B49FA200CFC24A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B3BF53CF29B4A62E00CFC24A /* HomeStyleOneCell.swift */,
+				B3BF53D029B4A62E00CFC24A /* HomeStyleOneCell.xib */,
+				B3BF53D329B4A63C00CFC24A /* HomeStyleTwoCell.swift */,
+				B3BF53D429B4A63C00CFC24A /* HomeStyleTwoCell.xib */,
+				B3BF53D729B4A65200CFC24A /* HomeRewardsProgramCell.swift */,
+				B3BF53D829B4A65200CFC24A /* HomeRewardsProgramCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B3F2CEBE29B4DD5500DB26AC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B3F2CEBF29B4DE3B00DB26AC /* ProfileHeaderView.swift */,
+				B3F2CEC129B4DE5B00DB26AC /* ProfileHeaderView.xib */,
+				B3F2CEC329B4DFB100DB26AC /* ProfileCell.swift */,
+				B3F2CEC429B4DFB100DB26AC /* ProfileCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		ED890A7842F9B8BB8D3D34D1 /* Pods */ = {
@@ -401,13 +462,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3BF53D229B4A62E00CFC24A /* HomeStyleOneCell.xib in Resources */,
+				B3BF53D629B4A63C00CFC24A /* HomeStyleTwoCell.xib in Resources */,
+				B3BF53CE29B4A47100CFC24A /* HomePageViewController.xib in Resources */,
+				B3F2CEC229B4DE5B00DB26AC /* ProfileHeaderView.xib in Resources */,
 				B341330729B367EF006FB8BD /* MessageView.xib in Resources */,
+				B3BF53DA29B4A65200CFC24A /* HomeRewardsProgramCell.xib in Resources */,
 				B301F72629B251D00036BA5F /* LaunchScreen.storyboard in Resources */,
 				B34132CB29B27495006FB8BD /* AuthViewController.xib in Resources */,
 				B301F72329B251D00036BA5F /* Assets.xcassets in Resources */,
+				B3F2CEC629B4DFB100DB26AC /* ProfileCell.xib in Resources */,
 				B34132E129B283C4006FB8BD /* Colors.xcassets in Resources */,
 				B34132D829B27B5F006FB8BD /* ProfileViewController.xib in Resources */,
-				B34132D329B27B40006FB8BD /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,20 +540,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3BF53D929B4A65200CFC24A /* HomeRewardsProgramCell.swift in Sources */,
 				B34132F829B3603E006FB8BD /* LoadingButton.swift in Sources */,
 				B34132D629B27B53006FB8BD /* ProfileViewController.swift in Sources */,
 				B34132E429B28BD6006FB8BD /* Extensions.swift in Sources */,
-				B34132D129B27B38006FB8BD /* HomeViewController.swift in Sources */,
+				B30A124F29B48D3F009DC930 /* CoreModel.swift in Sources */,
+				B30A124929B47145009DC930 /* HttpUtil.swift in Sources */,
 				B34132EA29B3088A006FB8BD /* CustomTextFieldView.swift in Sources */,
+				B3F2CEC029B4DE3B00DB26AC /* ProfileHeaderView.swift in Sources */,
 				B341330929B36ABC006FB8BD /* App.swift in Sources */,
+				B3BF53DC29B4AAD200CFC24A /* HomePageModel.swift in Sources */,
 				B34132C929B2748D006FB8BD /* AuthViewController.swift in Sources */,
+				B3BF53CC29B4A46600CFC24A /* HomePageViewController.swift in Sources */,
 				B301F71E29B251CE0036BA5F /* LaunchAnimationViewController.swift in Sources */,
 				B34132DE29B27EE9006FB8BD /* StringConstants.swift in Sources */,
+				B30A124729B46D63009DC930 /* Theme.swift in Sources */,
 				B34132EF29B35CA1006FB8BD /* CustomButton.swift in Sources */,
+				B3BF53D529B4A63C00CFC24A /* HomeStyleTwoCell.swift in Sources */,
 				B301F71A29B251CE0036BA5F /* AppDelegate.swift in Sources */,
 				B341330529B361C6006FB8BD /* Animations.swift in Sources */,
+				B3F2CEC529B4DFB100DB26AC /* ProfileCell.swift in Sources */,
+				B3BF53D129B4A62E00CFC24A /* HomeStyleOneCell.swift in Sources */,
 				B34132F429B35ED9006FB8BD /* MessageView.swift in Sources */,
 				B34132F629B36037006FB8BD /* AnimatedButton.swift in Sources */,
+				B30A124B29B4764C009DC930 /* UserModel.swift in Sources */,
 				B301F71C29B251CE0036BA5F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -666,7 +742,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchAnimationViewController.xib;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -697,7 +773,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchAnimationViewController.xib;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
