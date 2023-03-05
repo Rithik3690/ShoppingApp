@@ -144,6 +144,8 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
             collectionView.reloadData()
             return
         }
-        
+        let vc = DetailViewController()
+        vc.homePageModel = CoreModel.shared.homePageModelItems[indexPath.row] as? HomePageModel
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -35,6 +35,8 @@
 		B341330529B361C6006FB8BD /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B341330429B361C6006FB8BD /* Animations.swift */; };
 		B341330729B367EF006FB8BD /* MessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B341330629B367EF006FB8BD /* MessageView.xib */; };
 		B341330929B36ABC006FB8BD /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B341330829B36ABC006FB8BD /* App.swift */; };
+		B39B9D0E29B5170200D29512 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39B9D0C29B5170200D29512 /* DetailViewController.swift */; };
+		B39B9D0F29B5170200D29512 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B39B9D0D29B5170200D29512 /* DetailViewController.xib */; };
 		B3BF53CC29B4A46600CFC24A /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BF53CB29B4A46600CFC24A /* HomePageViewController.swift */; };
 		B3BF53CE29B4A47100CFC24A /* HomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3BF53CD29B4A47100CFC24A /* HomePageViewController.xib */; };
 		B3BF53D129B4A62E00CFC24A /* HomeStyleOneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BF53CF29B4A62E00CFC24A /* HomeStyleOneCell.swift */; };
@@ -102,6 +104,8 @@
 		B341330429B361C6006FB8BD /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		B341330629B367EF006FB8BD /* MessageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageView.xib; sourceTree = "<group>"; };
 		B341330829B36ABC006FB8BD /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		B39B9D0C29B5170200D29512 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B39B9D0D29B5170200D29512 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		B3BF53CB29B4A46600CFC24A /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		B3BF53CD29B4A47100CFC24A /* HomePageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePageViewController.xib; sourceTree = "<group>"; };
 		B3BF53CF29B4A62E00CFC24A /* HomeStyleOneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStyleOneCell.swift; sourceTree = "<group>"; };
@@ -224,6 +228,7 @@
 			children = (
 				B34132CE29B27B00006FB8BD /* Home */,
 				B34132CF29B27B1D006FB8BD /* Profile */,
+				B39B9D0B29B516D200D29512 /* Detail */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -313,6 +318,15 @@
 				B341330429B361C6006FB8BD /* Animations.swift */,
 			);
 			path = Animations;
+			sourceTree = "<group>";
+		};
+		B39B9D0B29B516D200D29512 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				B39B9D0C29B5170200D29512 /* DetailViewController.swift */,
+				B39B9D0D29B5170200D29512 /* DetailViewController.xib */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		B3BF53BF29B49FA200CFC24A /* Views */ = {
@@ -463,6 +477,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3BF53D229B4A62E00CFC24A /* HomeStyleOneCell.xib in Resources */,
+				B39B9D0F29B5170200D29512 /* DetailViewController.xib in Resources */,
 				B3BF53D629B4A63C00CFC24A /* HomeStyleTwoCell.xib in Resources */,
 				B3BF53CE29B4A47100CFC24A /* HomePageViewController.xib in Resources */,
 				B3F2CEC229B4DE5B00DB26AC /* ProfileHeaderView.xib in Resources */,
@@ -553,6 +568,7 @@
 				B34132C929B2748D006FB8BD /* AuthViewController.swift in Sources */,
 				B3BF53CC29B4A46600CFC24A /* HomePageViewController.swift in Sources */,
 				B301F71E29B251CE0036BA5F /* LaunchAnimationViewController.swift in Sources */,
+				B39B9D0E29B5170200D29512 /* DetailViewController.swift in Sources */,
 				B34132DE29B27EE9006FB8BD /* StringConstants.swift in Sources */,
 				B30A124729B46D63009DC930 /* Theme.swift in Sources */,
 				B34132EF29B35CA1006FB8BD /* CustomButton.swift in Sources */,
