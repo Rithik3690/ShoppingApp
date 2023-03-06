@@ -23,6 +23,7 @@ open class MessageView: UIView {
                     nibView.frame = keyWindow.bounds
                     keyWindow.addSubview(nibView)
                     nibView.messageText = message
+                    nibView.messageLabel.accessibilityLabel = message
                     nibView.baseView.layer.cornerRadius = 4
                     Animations.slideFromTop(nibView.baseView)
                     nibView.configureTapGestureRecognizer()

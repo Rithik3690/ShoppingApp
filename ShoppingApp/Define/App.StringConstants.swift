@@ -52,7 +52,7 @@ extension App {
         //Error Messages
         public static let fieldsEmptyError = "Username or Password cannot be empty"
         public static let invalidURLError = "Invalid URL"
-        public static let incorrectAuthDetailsError = "The user name or password is incorrect"
+        public static let incorrectAuthDetailsError = "The username or password is incorrect"
         
         // API Url
         public static let userDetailsURL = "https://run.mocky.io/v3/aaf97364-eedc-46a5-8f9e-56eb4b3cedd2"

@@ -1,9 +1,6 @@
 //
 //  ShoppingAppTests.swift
-//  ShoppingAppTests
-//
-//  Created by Rithik Vardhan on 03/03/23.
-//
+//  
 
 import XCTest
 @testable import ShoppingApp

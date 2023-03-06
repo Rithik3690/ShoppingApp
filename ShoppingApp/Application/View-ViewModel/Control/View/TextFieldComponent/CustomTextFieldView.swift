@@ -42,6 +42,9 @@ class CustomTextFieldView: UIView {
     
     func configureTextField(_ title: String, inputText: String = "", tintColorActive: UIColor = App.Theme.current.package.accentColor, primaryBorderColour: UIColor = App.Theme.current.package.primaryTextColor.withAlphaComponent(0.8), primaryBackgroundColor: UIColor = App.Theme.current.package.backgroundColor, isSecureTextEntry: Bool = false) {
         self.title = title
+        self.accessibilityLabel = title
+        self.label.accessibilityLabel = title
+        self.textField.accessibilityLabel = title
         self.textField.text = inputText
         self.tintColorActive = tintColorActive
         self.primaryBorderColour = primaryBorderColour
