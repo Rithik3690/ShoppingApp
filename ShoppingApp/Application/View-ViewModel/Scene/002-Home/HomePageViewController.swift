@@ -15,6 +15,7 @@ class HomePageViewController: UIViewController {
     
     var viewModel = [Any]()
     var filterModel = [Any]()
+    var userAddedToRewardsProgram: Bool = false
     var sortAtoZ: Bool = false
     
     override func viewDidLoad() {
@@ -86,7 +87,7 @@ class HomePageViewController: UIViewController {
                 }
             }
         }
-        if filterModel.count > 3 {
+        if filterModel.count > 3, !userAddedToRewardsProgram {
             filterModel.insert(RewardModel(text: App.StringConstants.rewardsProgramMessage, image: App.Images.reward), at: UIDevice.isIpad ? 4 : 2)
         }
         DispatchQueue.main.async { [weak self] in
@@ -233,6 +234,7 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView.cellForItem(at: indexPath) is HomeRewardsProgramCell {
             filterModel.remove(at: indexPath.row)
+            userAddedToRewardsProgram = true
             collectionView.reloadData()
             AlertView.show(alertItem: AlertViewItem(image: App.Images.reward_success,headerText: App.StringConstants.HURRAY, headerColor: App.Theme.current.package.accentColor, messageText: App.StringConstants.rewardsProgramSuccessMessage, acceptButtonText: App.StringConstants.ok, cancelButtonText: App.StringConstants.dismiss))
             return
