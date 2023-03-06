@@ -139,6 +139,7 @@
 		B3ABE6C829B5C8210006F30F /* ReusableFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableFunctions.swift; sourceTree = "<group>"; };
 		B3ABE6CA29B5C8AC0006F30F /* AlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
 		B3ABE6CB29B5C8AC0006F30F /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		B3ABE6D229B602A70006F30F /* ShoppingAppTestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShoppingAppTestPlan.xctestplan; sourceTree = "<group>"; };
 		B3BF53CB29B4A46600CFC24A /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		B3BF53CF29B4A62E00CFC24A /* HomeStyleOneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStyleOneCell.swift; sourceTree = "<group>"; };
 		B3BF53D029B4A62E00CFC24A /* HomeStyleOneCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeStyleOneCell.xib; sourceTree = "<group>"; };
@@ -225,6 +226,7 @@
 		B301F73929B251D10036BA5F /* ShoppingAppUITests */ = {
 			isa = PBXGroup;
 			children = (
+				B3ABE6D229B602A70006F30F /* ShoppingAppTestPlan.xctestplan */,
 				B301F73A29B251D10036BA5F /* ShoppingAppUITests.swift */,
 				B301F73C29B251D10036BA5F /* ShoppingAppUITestsLaunchTests.swift */,
 			);

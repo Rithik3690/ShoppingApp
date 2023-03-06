@@ -24,8 +24,8 @@ class AuthViewController: UIViewController {
         signInButton.backgroundColor = App.Theme.current.package.accentColor
         containerView.configureShadowWithCorner(shadowColor: App.Theme.current.package.accentColor, shadowOpacity: 0.8)
         containerView.backgroundColor = App.Theme.current.package.backgroundColor
-        layoutTextField(usernameTextFieldView, textFieldView: usernameTextfield, title: App.StringConstants.Username, inputText: "wjohn", tintColorActive: App.Theme.current.package.accentColor)
-        layoutTextField(passwordTextFieldView, textFieldView: passwordTextfield, title: App.StringConstants.Password, inputText: "1234", tintColorActive: App.Theme.current.package.accentColor, isSecureTextEntry: true)
+        layoutTextField(usernameTextFieldView, textFieldView: usernameTextfield, title: App.StringConstants.Username, tintColorActive: App.Theme.current.package.accentColor)
+        layoutTextField(passwordTextFieldView, textFieldView: passwordTextfield, title: App.StringConstants.Password, tintColorActive: App.Theme.current.package.accentColor, isSecureTextEntry: true)
     }
     
     private func layoutTextField(_ baseView: UIView, textFieldView: CustomTextFieldView, title: String, inputText: String = "", tintColorActive: UIColor = App.Theme.current.package.accentColor, primaryBorderColour: UIColor = App.Theme.current.package.primaryTextColor.withAlphaComponent(0.8), primaryBackgroundColor: UIColor = App.Theme.current.package.backgroundColor, isSecureTextEntry: Bool = false) {
@@ -61,7 +61,7 @@ class AuthViewController: UIViewController {
         
         dispatchGroup.notify(queue: DispatchQueue.main) { [weak self] in
             sender.stopLoadingAnimation()
-            if AuthModel.username?.equalsIgnoreCase(username) == true || password == "1234" {
+            if AuthModel.username?.equalsIgnoreCase(username) == true && password == "1234" {
                 self?.navigateToHomeVC()
             } else {
                 MessageView.show(App.StringConstants.incorrectAuthDetailsError)

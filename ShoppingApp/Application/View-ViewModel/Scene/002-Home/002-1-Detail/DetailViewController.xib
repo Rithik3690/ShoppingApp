@@ -174,11 +174,6 @@
             <point key="canvasLocation" x="44" y="-11.822660098522167"/>
         </view>
     </objects>
-    <designables>
-        <designable name="Ba2-5b-ceM">
-            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
-        </designable>
-    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

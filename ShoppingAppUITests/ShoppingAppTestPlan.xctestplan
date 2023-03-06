@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "7192FC9E-9BB8-42E0-A463-432E1A4D9B28",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:ShoppingApp.xcodeproj",
+        "identifier" : "B301F73529B251D10036BA5F",
+        "name" : "ShoppingAppUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
