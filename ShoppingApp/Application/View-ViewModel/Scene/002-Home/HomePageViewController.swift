@@ -123,6 +123,8 @@ class HomePageViewController: UIViewController {
         searchButton.backgroundColor = .clear
         searchButton.setTitle("", for: .normal)
         
+        searchField.layer.borderColor = App.Theme.current.package.accentColor.cgColor
+        searchField.layer.borderWidth = 0.2
         searchField.tintColor = App.Theme.current.package.accentColor
         searchField.textColor = App.Theme.current.package.primaryTextColor
         searchField.returnKeyType = .search

@@ -29,7 +29,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
-                    <color key="backgroundColor" red="0.97254901960784312" green="0.88627450980392153" blue="0.90588235294117647" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.97254901960784312" green="0.88627450980392153" blue="0.90588235294117647" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                     <blurEffect style="regular"/>
                 </visualEffectView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jPE-rV-90k">
@@ -123,6 +123,14 @@
             <point key="canvasLocation" x="-31.297709923664122" y="19.718309859154932"/>
         </view>
     </objects>
+    <designables>
+        <designable name="Sue-uG-CsQ">
+            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
+        </designable>
+        <designable name="gHK-cJ-n79">
+            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
+        </designable>
+    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -26,7 +26,7 @@ class HomeStyleTwoCell: UICollectionViewCell {
     }
 
     func configure(_ model: ItemModel) {
-        containerView.configureShadowWithCorner(shadowColor: App.Theme.current.package.accentColor, shadowOpacity: 0.8)
+        containerView.configureShadowWithCorner(shadowColor: App.Theme.current.package.accentColor, shadowOpacity: 0.2)
         containerView.backgroundColor = App.Theme.current.package.backgroundColor
         itemImageView.loadImageFromAPI(with: model.productUrl)
         brandLabel.text = model.brand

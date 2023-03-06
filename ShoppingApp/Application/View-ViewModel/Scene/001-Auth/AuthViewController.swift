@@ -22,7 +22,7 @@ class AuthViewController: UIViewController {
         signInButton.animationStyle = .springIn
         signInButton.setTitleColor(App.Theme.current.package.secondaryTextColor, for: .normal)
         signInButton.backgroundColor = App.Theme.current.package.accentColor
-        containerView.configureShadowWithCorner(shadowColor: App.Theme.current.package.accentColor, shadowOpacity: 0.8)
+        containerView.configureShadowWithCorner(shadowColor: App.Theme.current.package.accentColor, shadowOpacity: 0.3)
         containerView.backgroundColor = App.Theme.current.package.backgroundColor
         layoutTextField(usernameTextFieldView, textFieldView: usernameTextfield, title: App.StringConstants.Username, tintColorActive: App.Theme.current.package.accentColor)
         layoutTextField(passwordTextFieldView, textFieldView: passwordTextfield, title: App.StringConstants.Password, tintColorActive: App.Theme.current.package.accentColor, isSecureTextEntry: true)
