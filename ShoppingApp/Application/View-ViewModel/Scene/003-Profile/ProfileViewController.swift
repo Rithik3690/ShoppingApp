@@ -22,6 +22,7 @@ class ProfileViewController: UIViewController {
     }
     
     private func setupTableView() {
+        tableView.backgroundColor = .clear
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(ProfileCell.nib(), forCellReuseIdentifier: ProfileCell.identifier)

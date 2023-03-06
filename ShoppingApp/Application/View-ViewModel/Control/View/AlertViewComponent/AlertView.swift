@@ -64,6 +64,7 @@ open class AlertView: UIView {
     
     public func configureAlert<viewItem>(item: viewItem, acceptHandler: (() -> ())? = nil) {
         baseView.layer.cornerRadius = 8
+        baseView.backgroundColor = App.Theme.current.package.backgroundColor
         baseView.configureShadowWithCorner(shadowColor: App.Theme.current.package.accentColor, shadowOpacity: 0.8)
         acceptButton.backgroundColor = App.Theme.current.package.accentColor
         acceptButton.setTitleColor(App.Theme.current.package.secondaryTextColor, for: .normal)

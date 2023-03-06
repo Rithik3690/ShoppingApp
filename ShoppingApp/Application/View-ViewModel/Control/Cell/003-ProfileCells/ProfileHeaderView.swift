@@ -27,6 +27,7 @@ class ProfileHeaderView: UITableViewHeaderFooterView {
     }
  
     func configureHeader(_ viewModel: ProfileHeaderViewModel) {
+        containerView.backgroundColor = App.Theme.current.package.backgroundColor
         containerView.backgroundColor = App.Theme.current.package.accentColor.withAlphaComponent(0.1)
         userDetailsHeaderLabel.textColor = App.Theme.current.package.primaryTextColor
         walletBalanceHeaderLabel.textColor = App.Theme.current.package.primaryTextColor.withAlphaComponent(0.8)
