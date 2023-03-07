@@ -17,7 +17,7 @@ class HomePageViewController: UIViewController {
     var filterModel = [Any]()
     var userAddedToRewardsProgram: Bool = false
     var sortAtoZ: Bool = false
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         title = App.StringConstants.home
@@ -35,32 +35,37 @@ class HomePageViewController: UIViewController {
     }
     
     private func getItemsFromAPI() {
+        dispatchGroup.enter()
         Router.getHttpServiceForAPI(App.StringConstants.itemsURL) { [weak self] json in
             guard let self = self else { return }
             if let responseData = json as? [String: Any], let data = responseData[App.StringConstants.data] as? [String: Any], let products = data[App.StringConstants.products] as? [[String: Any]] {
-                self.viewModel = products
-                self.loadCollectionViewData(products)
+                self.filterModel = self.loadCollectionViewData(products)
+                self.viewModel = self.loadCollectionViewData(products)
             }
-        } onFailure: { error in
+            self.dispatchGroup.leave()
+        } onFailure: { [weak self] error in
             MessageView.show(error?.localizedDescription ?? App.StringConstants.invalidURLError)
+            self?.dispatchGroup.leave()
+        }
+
+        dispatchGroup.notify(queue: DispatchQueue.main) { [weak self] in
+            self?.reloadCollectionView()
         }
     }
     
-    private func loadCollectionViewData(_ products: [Any]) {
-        filterModel.removeAll()
-        if let items = products as? [[String: Any]] {
-            items.forEach { item in
-                filterModel.append(getModuleItem(item))
-            }
-        } else {
-            filterModel = products
+    private func reloadCollectionView() {
+        if viewModel.count > 2, !userAddedToRewardsProgram {
+            viewModel.insert(RewardModel(text: App.StringConstants.rewardsProgramMessage, image: App.Images.reward), at: 2)
         }
-        if filterModel.count > 2, !userAddedToRewardsProgram {
-            filterModel.insert(RewardModel(text: App.StringConstants.rewardsProgramMessage, image: App.Images.reward), at: 2)
+        collectionView.reloadData()
+    }
+    
+    private func loadCollectionViewData(_ products: [[String: Any]]) -> [Any] {
+        var model = [Any]()
+        products.forEach { item in
+            model.append(getModuleItem(item))
         }
-        DispatchQueue.main.async { [weak self] in
-            self?.collectionView.reloadData()
-        }
+        return model
     }
     
     private func getModuleItem(_ item: [String: Any]) -> HomePageModel {
@@ -102,24 +107,24 @@ class HomePageViewController: UIViewController {
     
     private func filterViewModel(_ searchText: String?) {
         if let text = searchText, text.count > 0 {
-            let model = viewModel.filter({ model in
-                guard let model = model as? [String: Any] else { return false }
-                if let name = model[App.StringConstants.name] as? String, let brand = model[App.StringConstants.brand] as? String, let desc = model[App.StringConstants.productDesc] as? String {
+            viewModel = filterModel.filter({ model in
+                guard let model = model as? HomePageModel else { return false }
+                if let name = model.name, let brand = model.brand, let desc = model.productDesc {
                     return name.containsIgnoresCase(text) || brand.containsIgnoresCase(text) || desc.containsIgnoresCase(text)
                 }
                 return false
             })
-            loadCollectionViewData(model)
         }
+        reloadCollectionView()
     }
     
     @IBAction func sortTapped(_ sender: UIButton) {
-        let model = viewModel.lazy.sorted (by: ({ [weak self] first, second in
-            guard let modelOne = first as? [String: Any], let modelTwo = second as? [String: Any], let self = self, let nameOne = modelOne[App.StringConstants.name] as? String, let nameTwo = modelTwo[App.StringConstants.name] as? String else { return false }
+        viewModel = filterModel.lazy.sorted (by: ({ [weak self] first, second in
+            guard let modelOne = first as? HomePageModel, let modelTwo = second as? HomePageModel, let self = self, let nameOne = modelOne.name, let nameTwo = modelTwo.name else { return false }
             return self.sortAtoZ ? (nameOne < nameTwo) : (nameOne > nameTwo)
         }))
         sortAtoZ = !sortAtoZ
-        loadCollectionViewData(model)
+        reloadCollectionView()
     }
     
     @IBAction func searchTapped(_ sender: UIButton) {
@@ -147,20 +152,20 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return filterModel.count
+        return viewModel.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if filterModel[indexPath.row] is HomePageModel {
+        if viewModel[indexPath.row] is HomePageModel {
             return CGSize(width: App.ScreenSize.width/2, height: UIDevice.isIpad ? 190 : 320)
-        } else if filterModel[indexPath.row] is RewardModel {
+        } else if viewModel[indexPath.row] is RewardModel {
             return CGSize(width: App.ScreenSize.width, height: 60)
         }
         return CGSize.zero
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let modelItem = filterModel[indexPath.row] as? HomePageModel {
+        if let modelItem = viewModel[indexPath.row] as? HomePageModel {
             if UIDevice.isIpad {
                 if let styleTwoCell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeStyleTwoCell.identifier, for: indexPath) as? HomeStyleTwoCell {
                     styleTwoCell.configure(ItemModel(modelItem))
@@ -171,7 +176,7 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
                 styleOneCell.configure(ItemModel(modelItem))
                 return styleOneCell
             }
-        } else if let modelItem = filterModel[indexPath.row] as? RewardModel {
+        } else if let modelItem = viewModel[indexPath.row] as? RewardModel {
             if let rewardsCell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeRewardsProgramCell.identifier, for: indexPath) as? HomeRewardsProgramCell {
                 rewardsCell.configure(modelItem)
                 return rewardsCell
@@ -182,14 +187,14 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView.cellForItem(at: indexPath) is HomeRewardsProgramCell {
-            filterModel.remove(at: indexPath.row)
+            viewModel.remove(at: indexPath.row)
             userAddedToRewardsProgram = true
             collectionView.reloadData()
             AlertView.show(alertItem: AlertViewItem(image: App.Images.reward_success,headerText: App.StringConstants.HURRAY, headerColor: App.Theme.current.package.accentColor, messageText: App.StringConstants.rewardsProgramSuccessMessage, acceptButtonText: App.StringConstants.ok, cancelButtonText: App.StringConstants.dismiss))
             return
         }
         let vc = DetailViewController()
-        if let model = filterModel[indexPath.row] as? HomePageModel {
+        if let model = viewModel[indexPath.row] as? HomePageModel {
             vc.detailModel = DetailModel(model)
         }
         navigationController?.pushViewController(vc, animated: true)
