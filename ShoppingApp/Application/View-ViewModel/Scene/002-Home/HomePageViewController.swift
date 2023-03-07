@@ -49,54 +49,22 @@ class HomePageViewController: UIViewController {
     private func loadCollectionViewData(_ products: [Any]) {
         filterModel.removeAll()
         if let items = products as? [[String: Any]] {
-            for index in 0..<items.count {
-                if UIDevice.isIpad {
-                    if index == 4 || index == 5 {
-                        filterModel.append(self.getModuleItem(.styleTwo, item: items[index]))
-                        continue
-                    }
-                    filterModel.append(self.getModuleItem(.styleOne, item: items[index]))
-                    continue
-                }
-                if index == 2 || index == 3 || index == 8 {
-                    filterModel.append(self.getModuleItem(.styleTwo, item: items[index]))
-                    continue
-                }
-                filterModel.append(self.getModuleItem(.styleOne, item: items[index]))
+            items.forEach { item in
+                filterModel.append(getModuleItem(item))
             }
         } else {
-            for index in 0..<products.count {
-                if var model = products[index] as? HomePageModel {
-                    if UIDevice.isIpad {
-                        if index == 4 || index == 5 {
-                            model.itemStyle = .styleTwo
-                            filterModel.append(model)
-                            continue
-                        }
-                        model.itemStyle = .styleOne
-                        filterModel.append(model)
-                        continue
-                    }
-                    if index == 2 || index == 3 || index == 8 {
-                        model.itemStyle = .styleTwo
-                        filterModel.append(model)
-                        continue
-                    }
-                    model.itemStyle = .styleOne
-                    filterModel.append(model)
-                }
-            }
+            filterModel = products
         }
-        if filterModel.count > 3, !userAddedToRewardsProgram {
-            filterModel.insert(RewardModel(text: App.StringConstants.rewardsProgramMessage, image: App.Images.reward), at: UIDevice.isIpad ? 4 : 2)
+        if filterModel.count > 2, !userAddedToRewardsProgram {
+            filterModel.insert(RewardModel(text: App.StringConstants.rewardsProgramMessage, image: App.Images.reward), at: 2)
         }
         DispatchQueue.main.async { [weak self] in
             self?.collectionView.reloadData()
         }
     }
     
-    private func getModuleItem(_ style: ItemStyle, item: [String: Any]) -> HomePageModel {
-        return HomePageModel(brand: item[App.StringConstants.brand] as? String, name: item[App.StringConstants.name] as? String, productDesc: item[App.StringConstants.productDesc] as? String, price: item[App.StringConstants.price] as? String, offerPrice: item[App.StringConstants.offerPrice] as? String, productUrl: item[App.StringConstants.productUrl] as? String, itemStyle: style)
+    private func getModuleItem(_ item: [String: Any]) -> HomePageModel {
+        return HomePageModel(brand: item[App.StringConstants.brand] as? String, name: item[App.StringConstants.name] as? String, productDesc: item[App.StringConstants.productDesc] as? String, price: item[App.StringConstants.price] as? String, offerPrice: item[App.StringConstants.offerPrice] as? String, productUrl: item[App.StringConstants.productUrl] as? String)
     }
     
     private func setupCollectionView() {
@@ -142,19 +110,16 @@ class HomePageViewController: UIViewController {
                 return false
             })
             loadCollectionViewData(model)
-        } else {
-            loadCollectionViewData(viewModel)
         }
-        
     }
     
     @IBAction func sortTapped(_ sender: UIButton) {
-        filterModel = filterModel.filter({ $0 is HomePageModel }).sorted(by: { [weak self] first, second in
-            guard let model1 = first as? HomePageModel, let name1 = model1.name, let model2 = second as? HomePageModel, let name2 = model2.name, let self = self else { return false }
-            return self.sortAtoZ ? name1 < name2 : name1 > name2
-        })
+        let model = viewModel.lazy.sorted (by: ({ [weak self] first, second in
+            guard let modelOne = first as? [String: Any], let modelTwo = second as? [String: Any], let self = self, let nameOne = modelOne[App.StringConstants.name] as? String, let nameTwo = modelTwo[App.StringConstants.name] as? String else { return false }
+            return self.sortAtoZ ? (nameOne < nameTwo) : (nameOne > nameTwo)
+        }))
         sortAtoZ = !sortAtoZ
-        loadCollectionViewData(filterModel)
+        loadCollectionViewData(model)
     }
     
     @IBAction func searchTapped(_ sender: UIButton) {
@@ -186,43 +151,25 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if let modelItem = filterModel[indexPath.row] as? HomePageModel {
-            switch modelItem.itemStyle {
-            case .styleOne:
-                if UIDevice.isIpad {
-                    return CGSize(width: App.ScreenSize.width/4, height: 320)
-                }
-                return CGSize(width: App.ScreenSize.width/2, height: 320)
-            case .styleTwo:
-                if UIDevice.isIpad {
-                    return CGSize(width: App.ScreenSize.width/2, height: 190)
-                }
-                return CGSize(width: App.ScreenSize.width, height: 190)
-            case .none:
-                return CGSize.zero
-            }
+        if filterModel[indexPath.row] is HomePageModel {
+            return CGSize(width: App.ScreenSize.width/2, height: UIDevice.isIpad ? 190 : 320)
         } else if filterModel[indexPath.row] is RewardModel {
             return CGSize(width: App.ScreenSize.width, height: 60)
         }
-            return CGSize.zero
+        return CGSize.zero
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let modelItem = filterModel[indexPath.row] as? HomePageModel {
-            switch modelItem.itemStyle {
-            case .styleOne:
-                if let styleOneCell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeStyleOneCell.identifier, for: indexPath) as? HomeStyleOneCell {
-                    styleOneCell.configure(ItemModel(modelItem))
-                    return styleOneCell
-                }
-            case .styleTwo:
+            if UIDevice.isIpad {
                 if let styleTwoCell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeStyleTwoCell.identifier, for: indexPath) as? HomeStyleTwoCell {
                     styleTwoCell.configure(ItemModel(modelItem))
                     return styleTwoCell
                 }
-                break
-            case .none:
-                break
+            }
+            if let styleOneCell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeStyleOneCell.identifier, for: indexPath) as? HomeStyleOneCell {
+                styleOneCell.configure(ItemModel(modelItem))
+                return styleOneCell
             }
         } else if let modelItem = filterModel[indexPath.row] as? RewardModel {
             if let rewardsCell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeRewardsProgramCell.identifier, for: indexPath) as? HomeRewardsProgramCell {
