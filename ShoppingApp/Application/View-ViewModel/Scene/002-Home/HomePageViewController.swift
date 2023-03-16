@@ -114,12 +114,15 @@ class HomePageViewController: UIViewController {
                 }
                 return false
             })
+            reloadCollectionView()
+        } else {
+            viewModel = filterModel
+            reloadCollectionView()
         }
-        reloadCollectionView()
     }
     
     @IBAction func sortTapped(_ sender: UIButton) {
-        viewModel = filterModel.lazy.sorted (by: ({ [weak self] first, second in
+        viewModel = viewModel.lazy.sorted (by: ({ [weak self] first, second in
             guard let modelOne = first as? HomePageModel, let modelTwo = second as? HomePageModel, let self = self, let nameOne = modelOne.name, let nameTwo = modelTwo.name else { return false }
             return self.sortAtoZ ? (nameOne < nameTwo) : (nameOne > nameTwo)
         }))
